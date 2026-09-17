@@ -32,7 +32,7 @@ if prompt := st.chat_input("What is the primary care copay?"):
         with st.spinner("Searching EOC database..."):
             try:
                 # REPLACE THE TEXT BELOW WITH YOUR ACTUAL MAKE WEBHOOK URL
-                webhook_url = https://hook.us2.make.com/ofhh5f91ta14ruundtfytgp4mwd3tw7u
+                webhook_url = "https://hook.us2.make.com/ofhh5f91ta14ruundtfytgp4mwd3tw7u"
                 
                 response = requests.post(webhook_url, json={"query": prompt})
                 
