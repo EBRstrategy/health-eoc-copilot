@@ -34,12 +34,12 @@ if prompt := st.chat_input("What is the primary care copay?"):
                 # REPLACE THE TEXT BELOW WITH YOUR ACTUAL MAKE WEBHOOK URL
                 webhook_url = "https://hook.us2.make.com/ofhh5f91ta14ruundtfytgp4mwd3tw7u"
                 
-                response = requests.post(webhook_url, json={"query": prompt})
+               response = requests.post(webhook_url, json={"query": prompt})
                 
                 if response.status_code in [200, 202]:
-                 answer = response.content.decode('utf-8')
-             else:
-                 answer = f"Error: Received status code {response.status_code} from backend."
+                    answer = response.content.decode('utf-8')
+                else:
+                    answer = f"Error: Received status code {response.status_code} from backend."
             except Exception as e:
                 answer = f"Connection error: Could not reach the Make webhook. Details: {e}"
             
