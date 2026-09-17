@@ -36,7 +36,7 @@ if prompt := st.chat_input("What is the primary care copay?"):
                 
                 response = requests.post(webhook_url, json={"query": prompt})
 
-             if response.status_code == 200:
+             if response.status_code in [200, 202]:
                  answer = response.text
              else:
                  answer = f"Error: Received status code {response.status_code} from backend."
